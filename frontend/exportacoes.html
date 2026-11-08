@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassExport - Exportações</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🌐</div>
+            <h1>Glass<span>Export</span></h1>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="produtos.html">📦 Produtos</a>
+            <a href="calculator.html">🧮 Calculadora</a>
+            <a href="exportacoes.html" class="ativo">🚢 Exportações</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            🌎<br>
+            Conectando seu negócio ao mundo
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="conteudo-principal">
+
+        <header class="topo-dashboard">
+            <div>
+                <h2>Gestão de Exportações 🚢</h2>
+                <p>Registre e acompanhe suas operações internacionais.</p>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- FORMULÁRIO -->
+            <section class="formulario">
+
+                <h3>🌍 Registrar nova exportação</h3>
+
+                <form id="formExportacao">
+
+                    <label for="produtoExportacao">Produto:</label>
+                    <select id="produtoExportacao" required>
+                        <option value="">Selecione um produto</option>
+                    </select>
+
+                    <label for="paisDestino">País de destino:</label>
+                    <input type="text" id="paisDestino"
+                        placeholder="Ex: Estados Unidos" required>
+
+                    <label for="quantidadeExportada">Quantidade:</label>
+                    <input type="number" id="quantidadeExportada"
+                        min="1" step="1" required>
+
+                    <label for="moedaExportacao">Moeda:</label>
+                    <select id="moedaExportacao" required>
+                        <option value="">Selecione uma moeda</option>
+                        <option value="USD">Dólar americano (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">Libra esterlina (GBP)</option>
+                        <option value="CAD">Dólar canadense (CAD)</option>
+                        <option value="JPY">Iene japonês (JPY)</option>
+                        <option value="CHF">Franco suíço (CHF)</option>
+                        <option value="AUD">Dólar australiano (AUD)</option>
+                        <option value="CNY">Yuan chinês (CNY)</option>
+                    </select>
+
+                    <label for="precoExportacao">
+                        Preço unitário internacional:
+                    </label>
+
+                    <input type="number" id="precoExportacao"
+                        step="0.01" min="0.01" required>
+
+                    <label for="dataExportacao">
+                        Data da exportação:
+                    </label>
+
+                    <input type="date" id="dataExportacao" required>
+
+                    <button type="submit">
+                        Registrar exportação
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- HISTÓRICO -->
+            <section class="card">
+
+                <h3>📋 Exportações registradas</h3>
+
+                
+<div class="filtros-exportacao">
+
+    <input
+        type="text"
+        id="filtroPais"
+        placeholder="🌎 Pesquisar país..."
+    >
+
+    <select id="filtroProduto">
+        <option value="">Todos os produtos</option>
+    </select>
+
+    <select id="filtroMoeda">
+        <option value="">Todas as moedas</option>
+        <option value="USD">USD - Dólar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - Libra</option>
+        <option value="CAD">CAD - Dólar canadense</option>
+        <option value="JPY">JPY - Iene</option>
+        <option value="CHF">CHF - Franco suíço</option>
+        <option value="AUD">AUD - Dólar australiano</option>
+        <option value="CNY">CNY - Yuan</option>
+    </select>
+
+    <button type="button" id="limparFiltros">
+        Limpar filtros
+    </button>
+
+</div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>País</th>
+                            <th>Quantidade</th>
+                            <th>Moeda</th>
+                            <th>Preço unitário</th>
+                            <th>Valor total</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaExportacoes">
+                        <tr>
+                            <td colspan="7">
+                                Carregando exportações...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="js/notificacoes.js"></script>
+
+<script src="js/exportacoes.js"></script>
+
+</body>
+</html>

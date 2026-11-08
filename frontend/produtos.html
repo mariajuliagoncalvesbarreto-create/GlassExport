@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassExport - Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🌐</div>
+            <h1>Glass<span>Export</span></h1>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="produtos.html" class="ativo">📦 Produtos</a>
+            <a href="calculator.html">🧮 Calculadora</a>
+            <a href="exportacoes.html">🚢 Exportações</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            🌎<br>
+            Conectando seu negócio ao mundo
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="conteudo-principal">
+
+        <header class="topo-dashboard">
+            <div>
+                <h2>Gestão de Produtos 📦</h2>
+                <p>Cadastre e gerencie seus produtos de exportação.</p>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- FORMULÁRIO -->
+            <section class="formulario">
+
+                <h3>✨ Cadastrar novo produto</h3>
+
+                <form id="formProduto">
+
+                    <input type="text" id="nome"
+                        placeholder="Nome do produto"
+                        required minlength="2">
+
+                    <input type="text" id="descricao"
+                        placeholder="Descrição" required>
+
+                    <input type="number" id="custo"
+                        placeholder="Preço de custo (R$)"
+                        step="0.01" min="0.01" required>
+
+                    <input type="number" id="estoque"
+                        placeholder="Quantidade em estoque"
+                        min="0" step="1" required>
+
+                    <button type="submit">
+                        Cadastrar produto
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- LISTAGEM -->
+            <section class="card">
+
+                <h3>📋 Produtos cadastrados</h3>
+                <div class="filtro-tabela">
+    <input
+        type="text"
+        id="pesquisaProduto"
+        placeholder="🔎 Pesquisar produto pelo nome ou descrição..."
+    >
+</div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Descrição</th>
+                            <th>Custo</th>
+                            <th>Venda (100% lucro)</th>
+                            <th>Estoque</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaProdutos">
+                        <tr>
+                            <td colspan="5">
+                                Carregando produtos...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+<script src="js/notificacoes.js"></script>
+
+<script src="js/produtos.js"></script>
+
+</body>
+</html>

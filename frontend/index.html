@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassExport - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🌐</div>
+            <h1>Glass<span>Export</span></h1>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="index.html" class="ativo">🏠 Dashboard</a>
+            <a href="produtos.html">📦 Produtos</a>
+            <a href="calculator.html">🧮 Calculadora</a>
+            <a href="exportacoes.html">🚢 Exportações</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            🌎<br>
+            Conectando seu negócio ao mundo
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="conteudo-principal">
+
+        <header class="topo-dashboard">
+            <div>
+                <h2>Bem-vinda de volta! 👋</h2>
+                <p>Gerencie suas exportações de forma simples e eficiente.</p>
+            </div>
+
+            <div class="data-atual">
+                📅 <span id="dataAtual"></span>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- CARDS PRINCIPAIS -->
+            <section class="dashboard cards-principais">
+
+                <div class="card card-acesso">
+                    <div class="icone-card">📦</div>
+                    <h3>Produtos</h3>
+                    <p>Cadastre e gerencie seus produtos.</p>
+                    <a href="produtos.html">Acessar →</a>
+                </div>
+
+                <div class="card card-acesso destaque">
+                    <div class="icone-card">🧮</div>
+                    <h3>Calculadora</h3>
+                    <p>Calcule valores e conversões de moedas.</p>
+                    <a href="calculator.html">Acessar →</a>
+                </div>
+
+                <div class="card card-acesso">
+                    <div class="icone-card">🚢</div>
+                    <h3>Exportações</h3>
+                    <p>Registre suas exportações.</p>
+                    <a href="exportacoes.html">Acessar →</a>
+                </div>
+
+                <div class="card card-marca">
+                    <div class="icone-card">📈</div>
+                    <h3>GlassExport</h3>
+                    <p>Sua parceira no comércio internacional.</p>
+                    <div class="marca-decoracao">🌐</div>
+                </div>
+
+            </section>
+
+            <!-- INDICADORES -->
+            <section class="dashboard indicadores">
+
+                <div class="card">
+                    <h3>Produtos cadastrados</h3>
+                    <p id="totalProdutos">Carregando...</p>
+                </div>
+
+                <div class="card">
+                    <h3>Estoque total</h3>
+                    <p id="totalEstoque">Carregando...</p>
+                </div>
+
+                <div class="card">
+                    <h3>Valor do estoque</h3>
+                    <p id="valorEstoque">Carregando...</p>
+                </div>
+
+                <div class="card">
+                    <h3>Exportações realizadas</h3>
+                    <p id="totalExportacoes">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Unidades exportadas</h3>
+                    <p id="totalUnidadesExportadas">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Valores exportados por moeda</h3>
+                    <div id="valoresPorMoeda">Carregando...</div>
+                </div>
+
+            </section>
+
+            <!-- HISTÓRICO E COTAÇÕES -->
+            <section class="dashboard informacoes">
+
+                <div class="card">
+                    <h3>🚢 Últimas exportações</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>País</th>
+                                <th>Quantidade</th>
+                                <th>Moeda</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="ultimasExportacoes"></tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3>💱 Cotações internacionais</h3>
+                    <div id="listaCotacoes">Carregando cotações...</div>
+                </div>
+
+            </section>
+            
+<!-- RELATÓRIO POR PAÍS -->
+<section class="dashboard">
+
+    <div class="card" style="grid-column: 1 / -1;">
+
+        <h3>🌎 Relatório de exportações por país</h3>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>País de destino</th>
+                    <th>Operações</th>
+                    <th>Valores exportados</th>
+                </tr>
+            </thead>
+
+            <tbody id="relatorioPaises">
+                <tr>
+                    <td colspan="3">Carregando relatório...</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- GRÁFICO DE EXPORTAÇÕES -->
+<section class="dashboard">
+
+    <div class="card" style="grid-column: 1 / -1;">
+
+        <h3>📊 Exportações por país</h3>
+
+        <canvas id="graficoPaises" height="120"></canvas>
+
+    </div>
+
+</section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>
+
+<script>
+    const data = new Date();
+
+    document.getElementById("dataAtual").textContent =
+        data.toLocaleDateString("pt-BR", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassExport - Calculadora</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🌐</div>
+            <h1>Glass<span>Export</span></h1>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="produtos.html">📦 Produtos</a>
+            <a href="calculator.html" class="ativo">🧮 Calculadora</a>
+            <a href="exportacoes.html">🚢 Exportações</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            🌎<br>
+            Conectando seu negócio ao mundo
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="conteudo-principal">
+
+        <header class="topo-dashboard">
+            <div>
+                <h2>Calculadora Internacional 🧮</h2>
+                <p>Calcule preços e converta valores para moedas internacionais.</p>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="formulario">
+
+                <h3>💱 Calcular preço internacional</h3>
+
+                <form id="formCalculadora">
+
+                    <label for="produtoCalc">Produto:</label>
+
+                    <select id="produtoCalc" required>
+                        <option value="">Selecione um produto</option>
+                    </select>
+
+                    <label for="moeda">Moeda:</label>
+
+                    <select id="moeda">
+                        <option value="USD">Dólar americano (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">Libra esterlina (GBP)</option>
+                        <option value="CAD">Dólar canadense (CAD)</option>
+                        <option value="JPY">Iene japonês (JPY)</option>
+                        <option value="CHF">Franco suíço (CHF)</option>
+                        <option value="AUD">Dólar australiano (AUD)</option>
+                        <option value="CNY">Yuan chinês (CNY)</option>
+                    </select>
+
+                    <label for="cotacao">Cotação em reais:</label>
+
+                    <input type="number" id="cotacao"
+                        step="0.00001" readonly required>
+
+                    <button type="submit">Calcular preço</button>
+
+                </form>
+
+                <div id="resultado"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="js/calculadora.js"></script>
+
+</body>
+</html>
+
+
